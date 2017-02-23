@@ -28,7 +28,7 @@ public class JsonMapper {
 
     public static String write(Object object) {
         try {
-            return mapper.writeValueAsString(object);
+            return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(object);
         } catch (JsonProcessingException e) {
             throw new UncheckedIOException("Could not write serialize object ", e);
         }
